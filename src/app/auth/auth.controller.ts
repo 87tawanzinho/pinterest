@@ -4,13 +4,13 @@ import { AuthService } from './auth.service';
 @Controller('auth')
 export class AuthController {
   constructor(private readonly serviceAuth: AuthService) {}
-  @Post()
+  @Post('signup')
   async SignUp() {
-    return this.serviceAuth.SignUp;
+    return this.serviceAuth.SignUp();
   }
 
-  @Post()
+  @Post('login')
   async Login() {
-    return this.serviceAuth.Login;
+    return this.serviceAuth.Login();
   }
 }
