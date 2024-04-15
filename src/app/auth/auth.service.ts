@@ -21,7 +21,9 @@ export class AuthService {
     };
   }
 
-  async Login() {
-    return 'value';
+  async Login(email: string) {
+    return this.prismaORM.user.findUnique({
+      where: { email },
+    });
   }
 }

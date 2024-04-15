@@ -11,7 +11,7 @@ export class AuthController {
   }
 
   @Post('login')
-  async Login() {
-    return this.serviceAuth.Login();
+  async Login(@Body('email') email: string) {
+    return this.serviceAuth.Login(email);
   }
 }
